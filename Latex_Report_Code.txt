@@ -1,0 +1,438 @@
+\documentclass[12pt]{report}
+\usepackage[a4paper, top=1in, bottom=1in, inner=1.25in, outer=1in ]{geometry}
+\usepackage{array}
+\usepackage{times}
+\usepackage{geometry}
+ \usepackage{textcase}
+\geometry{margin=1in}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{lipsum} 
+\usepackage{titlesec} 
+\usepackage{tocloft} 
+\usepackage{setspace}
+\usepackage{etoolbox} 
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{multirow}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} 
+\renewcommand{\cftchapfont}{\bfseries} 
+\titleformat{\chapter}[display]
+  {\normalfont\LARGE\bfseries\centering}
+  {Chapter \thechapter} 
+  {1em} 
+  {\Huge}
+\titlespacing*{\chapter}{0pt}{-20pt}{40pt}
+\begin{document}
+\begin{titlepage}
+    \centering
+    \LARGE
+    Project Stage -I Report on \\
+     \vspace{0.5cm}
+    \textbf{“Automated Electricity Metering System”} \\
+     \vspace{0.5cm}
+    \normalsize
+    SUBMITTED TO SAVITRIBAI PHULE PUNE UNIVERSITY \\
+    FOR THE PARTIAL FULFILLMENT OF THE REQUIREMENTS FOR THE DEGREE OF \\
+    BACHELOR OF ENGINEERING \\
+    IN \\
+    \usepackage{s}
+    ELECTRONICS AND TELECOMMUNICATION \\
+    \vspace{1cm}
+    Submitted by \\
+     \vspace{0.5cm}
+    Aniket Gund (B1900703033) \\
+    Bhushan Ranade(B1900703097 ) \\
+    Rohan Khilari (B1900703052  ) \\
+    Vaishanavi Borude(B1900703014  ) \\
+     \vspace{0.5cm}
+    Under the Guidance of \\
+     \vspace{0.5cm}
+   Guide name: Dr. Y.B. Thakare  \\
+     \vspace{0.5cm}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=5 cm, height =5cm]{logo.png}
+        %\caption{Caption}
+        \label{fig:enter-label2}
+    \end{figure}
+  
+    \vspace{1cm}
+    Department of Electronics and Telecommunication Engineering \\
+    Pune Vidyarthi Griha’s College of Engineering and Technology \\
+    \& G K Pate(Wani) Institute of Management, Pune -411009 \\
+     \vspace{0.5cm}
+    Academic Year 2024-2025
+\end{titlepage}
+
+\newpage
+\section*{\centering\textbf{Undertaking}}
+We, the students of Department of Electronics and Telecommunication Engineering, PVG’s College of Engineering and Technology \& G K Pate(Wani) Institute of Management, Parvati, Pune-411009
+\begin{itemize}
+    \item Name of student:Aniket Gund \hfill Exam Seat No.- B1900703033\hfill Signature
+    \item Name of student:Bhushan Ranade \hfill Exam Seat No.-B1900703097 \hfill Signature
+    \item Name of student:Rohan Khilari \hfill Exam Seat No.- B1900703052\hfill Signature
+    \item Name of student:Vaishnavi Borude \hfill Exam Seat No.- B1900703014\hfill Signature
+\end{itemize}
+
+do hereby undertake on 22.10.2024 the following:
+\begin{enumerate}
+    \item We are aware of the University Grants Commission (Promotion Of Academic Integrity and Prevention of Plagiarism In Higher Educational Institutions) Regulations, 2018 and Plagiarism Policy of Savitribai Phule Pune University Pune,
+    \item We are also aware that Department of Electronics and Telecommunication Engineering, PVG’s College of Engineering and Technology & G K Pate(Wani) Institute of Management, Parvati, Pune has established Departmental Academic Integrity Panel (DAIP) as per UGC regulations 2018 as mentioned above in (1),
+    \item We are aware of the consequences if found guilty of doing any act of plagiarism defined in the UGC regulations 2018 as mentioned above in (1),  
+    \item We shall abide by the rules, regulations and code of conducts for the students of UGC, SPPU and Department of E&TC,
+    \item We further undertake and declare that the thesis submitted by us is scanned using anti-plagiarism software as decided by the department and report of the same has been submitted and is free from any kind of plagiarism mentioned above (1) in UGC REGULATIONS, 2018,
+    \item I understand that non-compliance of the Academic Integrity and Prevention of Plagiarism may results in disciplinary action on us as per the University Grants Commission (Promotion of Academic Integrity and Prevention of Plagiarism in Higher Educational Institutions) Regulations, 2018.
+\end{enumerate}
+
+\newpage
+\begin{figure}
+    \centering
+    \includegraphics[width=5 cm\linewidth, height=5cm ]{logo.png}
+    \caption{Logo}
+    \label{fig:enter-label}
+\end{figure}
+\section*{\centering\textbf{CERTIFICATE}}
+This is to certify that the project entitled, “Automated Electricity Metering System”, is a work of
+\begin{itemize}
+    \item Name of student: Aniket Gund \hfill Exam Seat No.-B1900703033
+    \item Name of student: Bhushan Ranade \hfill Exam Seat No.-B1900703097
+    \item Name of student :Rohan Khilari \hfill Exam Seat No.-B1900703052
+    \item Name of student: Vaishnavi Borude \hfill Exam Seat No.-B1900703014
+\end{itemize}
+\vspace{1cm}
+towards the partial fulfillment of the degree of Bachelor of Engineering in Electronics and Telecommunication Engineering to be awarded by the Savitribai Phule Pune University, Pune at Pune Vidyarthi Griha’s College of Engineering and Technology \& G K Pate (Wani) Institute of Management, Pune during the academic year 2024-2025.
+\vspace{1cm}
+\begin{flushright}
+   (Dr. Y. B. Thakare ) \hfill (Dr. P. G. Shete ) \hfill (Dr. M. R. Tarambale)
+   
+   Project Guide \hfill Head, Department of E \& TC \hfill Principal
+\end{flushright}
+\vspace{2.5cm}
+\begin{flushleft}
+Principal\\
+Place:Pune\\
+Date :13/11/24
+\end{flushleft}
+\newpage
+\section*{\centering\textbf{ACKNOWELDGEMENT}}
+I would like to thank everyone who has helped us in developing this Automated Electricity Metering System project. First of all a big thank you to ABCD Analytics and to Vinayak Patawardhan Sir for giving us this project and supporting us throughout. I’m also really grateful to Kunal Pamu Sir from ABCD Analytics, who has been available to answer our questions and provide guidance. A special thanks to our project guide, Dr. Thakare Sir, for his encouragement and useful advice along the way. Finally, thanks to all our friends and staff members who have offered help and support, directly or indirectly, in moving this project forward.
+                  Thank you all for your support and encouragement.
+
+
+  \begin{flushright}
+    Aniket Gund \\
+    Bhushan Ranade \\
+    Rohan Khilari \\
+    Vaishnavi Borude\\
+\end{flushright}
+
+\newpage
+\clearpage
+% Set TOC title to "CONTENTS" and center it
+\renewcommand{\contentsname}{\begin{center}\LARGE\textbf{CONTENTS}\end{center}}
+\setlength{\cftbeforetoctitleskip}{} % Adjusts space above TOC title
+\setlength{\cftaftertoctitleskip}{} % Optional: Adjusts space after TOC title
+\begin{spacing}{}
+    \tableofcontents
+\end{spacing}
+
+\clearpage
+\addcontentsline{toc}{section}{Abstract}
+\section*{\centering ABSTRACT} % Centers and styles the section heading
+This thesis addresses the problem of inefficient energy monitoring and billing in traditional energy meters, which often lack transparency and user control. The primary objective of this project is to design a Energy Meter with a prepaid system, allowing users to monitor, manage, and control their energy usage in real-time, offering a more efficient, transparent, and user-friendly solution .To tackle this issue, a system has been developed that can measure voltage, current, power, and energy consumption accurately using a high-precision energy metering IC. The data from the meter is processed by a Esp32 Microcontroller and transmitted via a GPRS module to a remote server, where it is displayed on interactive dashboards for users and administrators. Users can track consumption, receive alerts for low balances, and recharge their accounts when needed, while administrators can monitor total usage and remotely control the meters.
+
+The prepaid system gives users more control over their spending, while the dashboards offer useful insights for both users and utilities. This project demonstrates a practical solution for improving energy management with real-time monitoring, accurate metering, and a user-controlled billing system. 
+\clearpage
+
+\addcontentsline{toc}{section}{List of Acronyms}
+\section*{\centering List of Acronyms}
+\item 1.Esp32: Espressif Systems Processor 32-bit 
+\item 2.GPRS: General Packet Radio Service 
+\item 3.IC: Integrated Circuit
+\item 4.LCD: Liquid Crystal Display
+\item 5.AMR: Automated Meter Reading 
+\item 6.AMI: Automated Metering Infrastructure
+\item 7.GSM: Global System for Mobile Communication
+\item 8.LoRa: Long Range
+\item 9.IOT: Internet Of Things
+\item 10.RTC: Real Time Clock
+\item 11.SMS: Short Message Service
+\item 12.HTTP: Hypertext Transfer Protocol
+\item 13.HTTPS: Hypertext Transfer Protocol Secure
+\item 14.API: Application Programming Interface
+
+% Acronyms content here...
+\clearpage
+
+\addcontentsline{toc}{section}{List of Symbols}
+\section*{\centering List of Symbols}
+\item 1.I :Current
+\item 2.V :Voltage
+\item 3.A :Amperes
+\item 4.PF :Power Factor
+\item 5.Kwh :Kilo Watt Hour
+\item 6.W: Watt
+\item 7.Hz: Hertz
+\item 8.DC: Direct Current
+\item 9.AC: Alternating Current
+\item 10.KB: Kilo Bytes
+\item 11.2G: Second Generation
+\item 12.ms: mili Seconds
+
+% Symbols content here...
+
+
+\clearpage
+\addcontentsline{toc}{section}{List of Figures}
+\section*{\centering \Large List of Figures}  % Custom title
+\renewcommand{\listfigurename}{}  % Disable default title
+\vspace{-2cm}
+\listoffigures  % This generates the list without the title
+
+
+
+%\listoffigures
+
+\clearpage
+% \addcontentsline{toc}{section}{List of Tables}
+% \section*{\centering \Large List of Tables}  % Custom title
+% \renewcommand{\listtablename}{}  % Disable default title
+% \vspace{-2cm}
+% \listoftables  % This generates the list without the title
+
+
+% Chapters and Sections
+
+\chapter{INTRODUCTION}
+\section{Introduction of the Proposed System}\\
+The proposed Automated Electricity Metering System is designed to improve energy management by offering real-time monitoring, prepaid billing, and better user control. It includes key components like an \textbf{PZEM-004T (energy metering IC)} to measure power consumption\textbf{,} a \textbf{Esp32 (microcontroller)} to process the data, and a \textbf{GPRS module} to send the data to a remote server .The system also features a \textbf{prepaid payment system}, allowing users to recharge their accounts. A \textbf{relay} disconnects the power when the balance hits zero, while an \textbf{LCD display} shows real-time usage and balance info. Data is stored and shown on \textbf{user and admin dashboards}, allowing easy monitoring of energy usage and system control. These components work together to provide a smart, efficient, and transparent energy management solution.
+
+\section{Motivation}
+The motivation for the Automated Electricity Metering Ssytem project is to address the inefficiencies of traditional energy meters, which lack real-time monitoring and transparent billing. Consumers often struggle to track their energy usage, while utilities face challenges in accurate billing and distribution. By introducing a prepaid system and real-time monitoring, the project aims to give users more control over their energy consumption, while helping utilities manage energy distribution more efficiently. This solution combines technology to create a smarter, more efficient way to manage energy.
+\\
+
+\section{Objectives}
+ i.	Design and Deploy Smart Meters with Prepaid Billing: Install Automated electricity metering system compliant with relevant standards across residential sites, ensuring they support prepaid billing and include remote disconnection/reconnection functionalities to enhance user control over energy consumption. \\
+ii.	Establish Advanced Communication System: Implement GPRS communication systems for real-time data transmission, meter status updates, and remote-control functionalities, providing seamless interaction between the smart meters and the user interface for both utility providers and consumers.\\
+iii. Integrate Automated Meter Reading (AMR) and Tamper Detection: Deploy AMR technology for accurate, real-time data collection and automated billing, while incorporating advanced tamper detection mechanisms to identify, log, and alert on tampering events to prevent unauthorized usage.
+
+
+
+\section{Outcomes}
+The Automated Electricity Metering System project aims to enhance billing accuracy and efficiency through advanced prepaid meters, reducing errors and enabling mobile payments for added convenience. It ensures precise meter readings and accurate billing, improving energy management and consumer satisfaction. Real-time data insights allow both consumers and utility providers to monitor usage, resolve issues quickly, and make informed decisions. Additionally, advanced tamper detection mechanisms help prevent unauthorized usage, ensuring secure and reliable billing. \\
+
+\section{Social relevance of the project}
+Implementing an Automated Metering System will transform energy management by significantly improving billing accuracy and customer satisfaction. This advanced metering technology promotes fairness and transparency, ensuring that customers are billed based on precise usage data, which can reduce disputes and build trust between consumers and utility providers. By automating the detection of service issues and minimizing the need for physical disconnections, supporting uninterrupted service for users. Additionally, the system will help in energy conservation efforts by providing real-time data that empowers consumers to make informed choices about their energy consumption. Overall, this project will contribute to a more efficient, and sustainable energy infrastructure that benefits both the community and the environment. 
+
+
+
+
+
+
+
+
+\end{enumerate}
+
+\chapter{LITERATURE SURVEY}
+\section{Introduction}
+The shift from conventional to automated electricity metering systems represents a significant advancement in energy management and efficiency. Traditional metering methods, which rely on manual data collection and periodic visits by utility personnel, are often time-consuming, error-prone, and costly. Automated metering systems, by contrast, enable real-time monitoring and data collection, which facilitates accurate billing, improved demand response, and better resource management. This literature survey examines the development and innovations in automated electricity metering, focusing on various technologies used to enhance metering accuracy, communication, and data management.
+
+The automated metering landscape includes a variety of technologies such as Advanced Metering Infrastructure (AMI), smart meters, and wireless communication modules like GSM, GPRS, and LoRa. Recent studies have explored these components, analyzing their effectiveness in terms of cost, data security, power consumption, and scalability. Furthermore, the integration of Internet of Things IoT) concepts with automated metering allows for seamless data transmission to centralized servers, enhancing monitoring and control capabilities. The literature reviewed in this survey addresses these innovations, comparing different approaches and highlighting challenges such as data privacy, interoperability, and maintenance .This survey provides a comprehensive overview of the current research in automated metering technologies, establishing a foundation for further advancements in smart grid infrastructure and offering insights into future development directions in this rapidly evolving field.\\
+
+
+
+
+
+
+\chapter{DESIGN OF THE PROPOSED SYSTEM}
+\section{Introduction}
+The Energy Meter system operates through a streamlined flow that enables real-time energy measurement, monitoring, and prepaid billing. Starting with an AC input, the power supply of 5V,4A and buck converter provide regulated power to the component that required less than 5V power supply . The PZEM-004T metering module tracks key parameters like voltage, current, and power, power factor, sending this data to the microcontroller ESP32, which processes it and displays real-time information on the LCD display within meter unit and this data transmitted to the server using the GPRS module SIM800L, 2 dashboards are provided one for utility and another for the consumer , utility had access of all the consumer data usage and authority to connect disconnect meter unit only the necessary information provided to the consumer. The microcontroller monitors the prepaid balance and disconnects the load via the relay if the balance reaches zero, alerts are provided regarding the low balance before the direct disconnection of power supply . The system includes tamper detection for security. A real-time clock (RTC) adds precise timestamps to all records, ensuring accurate consumption logs and billing. 
+\\
+
+\section{Block Diagram of the System}
+\begin{figure}[]
+    \centering
+    \includegraphics[width=15cm , height = 10cm\linewidth]{BD_1.png}
+    \caption{Consumer side Block diagram}
+    
+    \label{fig:Consumer side Block diagram}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=15cm , height =10cm\linewidth]{BD_2.jpeg}
+    \caption{Utility side Block diagram}
+    
+    \label{fig:Utility side Block diagram}
+\end{figure}
+
+\subsection{Entity Explanation}
+\item Smart Meters (SM1, SM2, SM3):
+Smart meters are installed at each customer location to monitor and record electricity consumption in real-time. Each smart meter is equipped with sensors to measure parameters like voltage, current, power, and energy usage. These meters then transmit the collected data to a centralized cloud platform. By collecting this data remotely, smart meters eliminate the need for manual readings, making the billing process more efficient and reducing operational costs.\\
+
+\item Cloud Platform:
+The cloud platform acts as a centralized data storage and processing system for the smart meters. Data from each smart meter is sent to the cloud, where it is stored, analyzed, and made accessible to both utility providers and customers. The cloud enables scalability, allowing the system to handle a large number of smart meters and users. Additionally, the cloud platform can support data analytics to help the utility analyze consumption trends, detect anomalies, and improve energy management.
+
+\item GPRS Router:
+The GPRS (General Packet Radio Service) router facilitates communication between mobile devices and the cloud. It allows mobile devices, such as smartphones and tablets, to connect to the system remotely, providing real-time access to energy data for both customers and utility personnel. This component ensures that mobile users can view their energy consumption data, receive billing updates, and access account information from anywhere with cellular coverage.
+
+\item Mobile Devices:
+Mobile devices, including smartphones and tablets, are used by customers and utility staff to access the smart meter system. Through a mobile application or web interface, customers can view their energy consumption, track their account balance, and manage payments. Utility staff can also use these devices to monitor system performance, access meter readings, and troubleshoot issues. The mobile interface enhances user engagement by providing convenient, remote access to energy data.
+
+\item Network Switch:
+The network switch connects various servers within the utility’s data center, managing data flow between them. It ensures efficient communication between the database, backup, and billing servers, as well as other network components. By routing data traffic, the switch helps maintain data integrity and system stability, ensuring that all servers are synchronized and that data is readily available when needed.
+
+\item Database Server:
+The database server serves as the main repository for storing energy consumption data, billing records, and customer information. It is designed to handle large amounts of data collected from the smart meters. This server provides data for the dashboard, enabling both customers and utility staff to access historical and real-time data. The server supports query processing, allowing users to search and filter data for specific time periods or parameters, which is critical for data analysis and billing purposes.
+
+\item Dashboard Interface:
+The dashboard is an interactive front-end interface that provides visualization of energy data for both customers and utility managers. Through the dashboard, users can view energy usage trends, billing information, and consumption reports. Utility providers can use the dashboard to monitor overall energy usage patterns and make data-driven decisions to optimize energy distribution. The dashboard also facilitates customer engagement by providing transparency in billing and consumption details.
+
+\item Backup Server:
+The backup server stores redundant copies of all critical data to ensure data availability and integrity. In the event of data corruption, hardware failure, or cyberattacks, the backup server enables the system to quickly recover lost or damaged data. This component is crucial for maintaining the reliability of the smart energy meter system and ensures that the utility meets regulatory requirements for data preservation.
+
+\item Billing Server:
+The billing server processes energy consumption data to generate accurate billing records. Based on the data received from the smart meters, this server calculates the charges for each customer according to their energy usage. The billing server updates customer accounts, generates invoices, and sends payment reminders. By automating the billing process, this server reduces the likelihood of human error and ensures timely, accurate billing for all customers.
+\section{Specifications of the Proposed System}
+\begin{enumerate}
+\item Meter Design:
+      \\Voltage: 220-230 V AC(Single Phase)
+       \\ Current:20-30 A 
+       \\ Frequency: 50 Hz
+        \\Power Factor: 0-1
+\item Meter Unit Power Supply:
+         \\Voltage: 5 V DC
+        \\ Current: 4 A
+         Power: 20 W
+\item Power Consumption within Unit: Approx. 10 W
+
+\item DATA :
+
+   Record Length = 4 bytes (Voltage) + 4 bytes (Current) + 4 bytes (Power) + 8 bytes (kWh) + 8 bytes (Timestamp) Record length :28 bytes per entry 
+
+Data collection every 2 min
+
+ Data Transmission frequency 15 min 
+
+ Per day readings 96 
+
+ Daily Data Volume (per meter) = 96 readings/day × 28 bytes
+
+ Daily Data Volume (per meter) = 2,688 bytes/day (\~2.6 KB/day).
+
+ Monthly Data Volume (per meter) = 2.6 KB/day × 30 days = 78 KB/month.
+
+ Yearly Data Volume (per meter) = 2.6 KB/day × 365 days = 949.44 KB/year (\~950 KB/year).
+\ m e t i      \end{enumerate}\newpage
+
+
+\chapter{SIMULATION AND TESTING}
+\section{System Simulation:}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=15cm , height = 10cm\linewidth]{SM_1.jpg}
+    \caption{Simulation}
+    \label{fig:Simulation}
+\end{figure}
+
+\item  {Explanation:}
+\\This Arduino simulation code emulates the core functions of a smart energy meter within Proteus, using an Arduino Uno as a substitute for the ESP32 microcontroller. Since Proteus does not support ESP32 for direct code simulation, we employ the Arduino to replicate the system’s core functionalities. In the actual setup, ESP32 will control these operations and communicate with a server, but here, the simulation helps verify the meter’s essential features.
+
+\\The code monitors energy by reading current and voltage values, calculates power, and tracks energy usage over time. For each unit of energy consumed (1 unit = 200 watts), the system deducts a set cost from the user’s account balance. If the balance falls to zero, it disconnects the relay to stop power flow and sends an SMS alert (via a GSM module simulation) prompting the user to recharge. Additionally, when the balance is low but not yet zero (under Rs 10), a warning SMS is sent. An LCD displays real-time data, including voltage, current, energy units, and account balance, to visually monitor the meter’s performance.
+
+\\To simulate balance recharging, a keypad allows manual entry of a recharge amount when the balance is low. In the actual ESP32-based system, this would be handled by the server rather than through keypad entry. This setup lets us validate core hardware interactions and the energy metering process, with simulated balance tracking and alerts, providing a functional test environment even with the limitations of Proteus.
+\eti\
+\section{Hardware Testing}
+\subsection{Testing Methodology}
+\clearpage
+
+%\newpage
+
+\section{Software Testing}
+\subsection{Software Design:}
+\\
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=18cm, length = 20cm]{ST_1.jpg}
+    \caption {Consumer Dashboard}
+    \label{fig:Consumer Dashboard}
+\end{figure}
+
+\\\item {Description for Consumer Dashboard:}This is a user dashboard for a Automated Electricity Metering System, providing an overview of current balance, real-time energy consumption, and usage patterns. It displays the balance amount with an option to recharge if needed. The dashboard allows users to view daily, weekly, and monthly consumption data. A statistical graph visually represents energy usage over the selected period, helping users track and manage their energy consumption effectively. This interface promotes better control over energy expenses and usage habits.
+\begin{figure}[]
+    \centering
+    \includegraphics[width=18cm, length = 22cm]{ST_2.jpeg}
+    \caption {Utility side Dashboard}
+    \label{fig:Utility Side Dashboard}
+\end{figure}\\
+\\\item {Description for Utility Dashboard:}This is an admin dashboard designed to monitor and manage user power consumption. It displays details such as the User ID, last reset time, last update time, total consumption in kWh, remaining balance, and status (Active or Inactive). The "On" and "Off" buttons under the "Action" column allow the utility provider to control the meter. If the user’s balance reaches zero, the provider has the authority to switch off the power to prevent further consumption. This setup helps ensure efficient energy usage and billing management.
+
+\chapter{RESULT ANALYSIS, CONCLUSIONS}
+\section{Result Analysis:}
+Research on the energy measurement IC (e.g., PZEM-004T) indicates that the system should achieve an accuracy of ±1\% in voltage, current, and power readings within standard household voltage (230V) and current limits. Reports from similar projects confirm that this IC provides stable and reliable measurements, especially with thorough calibration. For data transmission, the SIM800L GPRS module is expected to maintain an average latency of 2–5 seconds in typical 2G network conditions, enabling timely updates to the user dashboard. While some network variability is anticipated, preliminary tests with simulation tools have shown stable data transfer, indicating that the HTTP REST API over HTTPS will support secure and efficient communication.
+\\For system control, the relay is designed to disconnect the load when the balance reaches zero, with expected response times between 5–10 ms. Simulation data supports this, suggesting that the relay will respond reliably in practice. Additionally, research on anti-tampering measures has shown that the selected Push button can promptly detect tampering attempts, which will be tested further once hardware is available. The combined results from research and simulation suggest that the smart energy meter system is likely to perform accurately and reliably, with real-time data monitoring, secure communication, and effective power control once the hardware setup is complete. \\
+
+\section{Conclusion}
+\\The smart energy meter system, though still under development, shows strong potential based on research and simulation results. The design integrates precise energy measurement, reliable data communication, and effective control, addressing real-time monitoring, prepaid billing, and tamper detection needs for household energy management. The selected PZEM-004T IC and SIM800L GPRS module are expected to provide accurate consumption data and secure data transfer to the server.The relay control effectively supports prepaid functionality by disconnecting power when the balance reaches zero, while low-balance alerts and tamper detection add security and user convenience. Although real-world testing and calibration are pending, the system's design and simulations suggest it will meet its performance goals. This project offers a promising solution for efficient energy monitoring and billing management.
+
+\addcontentsline{toc}{chapter}{REFERENCES} 
+\renewcommand{\bibname}{REFERENCES}
+\bibliographystyle{plain} 
+\bibliography{References}
+
+\\[1] \item 1. N. Sushma, H. N. Suresh, J. Mohana Lakshmi, P. Naga Srinivasu, A. Kumar Bhoi, and P. Barsocchi, "A Unified Metering System Deployed for Water and Energy Monitoring in Smart City," *IEEE Access*, vol. XX, pp. 1-12, July 2023. DOI: 10.1109/ACCESS.2023.3299825.   
+\item 2. S. V. Sreedevi, P. Prasannan, J. K, and I. L. J I, "Development of Indigenous Smart Energy Meter adhering to Indian Standards for Smart Grid," in *2020 IEEE International Conference on Power Electronics, Smart Grid and Renewable Energy (PESGRE2020)*, Thiruvananthapuram, India, 2020. 
+\item 3. A. Babu, H. KJ, N. S, V. S. Pillai, R. K.P., and S. Sreekumar, "Home energy management system in Kerala by using advanced metering infrastructure," in *2024 Second International Conference on Smart Technologies for Power and Renewable Energy (SPECon)*, 2024. DOI: 10.1109/SPECon61254.2024.10537578.
+\item 4.  M. U. Saleem, M. R. Usman, and M. Shakir, "Design, Implementation, and Deployment of an IoT Based Smart Energy Management System," *IEEE Access*, vol. XX, pp. 1-12, April 2021. DOI: 10.1109/ACCESS.2021.3070960. 
+\item 5. S. Kumar, K. Suneetha, and A. Gill, "Utilization of IoT and Smart Meters for Energy Management," in *2023 International Conference on Power Energy, Environment \& Intelligent Control (PEEIC)*, 2023. 
+\item 6. M. J. Jeffin, M. G. M., A. Rao, G. Singh, and C. Vyjayanthi, "Internet of Things Enabled Power Theft Detection and Smart Meter Monitoring System," in *International Conference on Communication and Signal Processing*, India, July 2020. 
+\item 7. H. A. Hseiki, A. M. El-Hajj, Y. O. Ajra, F. A. Hija, and A. M. Haidar, "A Secure and Resilient Smart Energy Meter," *IEEE Access*, vol. XX, pp. 1-12, Jan. 2024. DOI: 10.1109/ACCESS.2023.3349091.
+\item 8. P. Kumari, R. Mishra, H. P. Gupta, T. Dutta, and S. K. Das, "An Energy Efficient Smart Metering System Using Edge Computing in LoRa Network," *IEEE Transactions on Sustainable Computing*, vol. 7, no. 4, pp. 1-12, Oct.-Dec. 2022. 
+\item 9. M. U. Saleem, M. R. Usman, M. A. Usman, and C. Politis, "Design, Deployment and Performance Evaluation of an IoT Based Smart Energy Management System for Demand Side Management in Smart Grid," *IEEE Access*, vol. XX, pp. 1-12, Jan. 2022. DOI: 10.1109/ACCESS.2022.3147484. 
+\item 10. F. Liu, C. Liang, and Q. He, "Remote Malfunctional Smart Meter Detection in Edge Computing Environment," *IEEE Access*, vol. XX, pp. 1-12, April 2020. DOI: 10.1109/ACCESS.2020.2985725. 
+\item 11. M. H. Raza, Y. M. Rind, I. Javed, M. Zubair, M. Q. Mehmood, and Y. Massoud, "Smart Meters for Smart Energy: A Review of Business Intelligence Applications," *IEEE Access*, vol. XX, pp. 1-12, Nov. 2023. DOI: 10.1109/ACCESS.2023.3326724.
+\item 12. E. Sacoto-Cabrera, J. Rodriguez-Bustamante, P. Gallegos-Segovia, G. Arevalo-Quishpi, and G. León-Paredes, "Internet of Things: Informatic System for Metering with Communications MQTT over GPRS for Smart Meters," in *2017 IEEE International Conference on IoT and Smart Cities*, Cuenca, Ecuador.
+\item 13. H. Tan, H. Yao, Y. Huang, H. Wang, Z. Zhao, and Y. Liu, "Error Correction Method for Smart Energy Meter Field Calibration System under Non-standard Conditions," in *2020 IEEE International Conference on Smart Energy Systems and Technologies*, Beijing, China. 
+\item 14. S. S. Chowdary, M. A. Abd El Ghany, and K. Hofmann, "IoT based Wireless Energy Efficient Smart Metering System Using ZigBee in Smart Cities," in *2020 International Conference on IoT, Smart Cities, and Smart Technologies*, Darmstadt, Germany and Cairo, Egypt.  
+\item 15. S. Katre and P. Ikhar, "Automatic MSEB Meter Reading," *International Research Journal of Engineering and Technology (IRJET)*, vol. 06, no. 05, pp. 371, May 2019. 
+\item 16. S. Sharma, H. Choudhary, H. Badetiya, L. Kumar, H. K. Aloria, and M. Jangid, "Smart Prepaid Energy Meter," *International Journal of Engineering Research \& Technology (IJERT)*, vol. 12, no. 04, April 2023. 
+\item 17. M. Mali, V. Jeswani, V. Charya, D. Kamble, and S. Padasalkar, "The Smart Energy Meter," *International Journal for Research in Applied Science \& Engineering Technology (IJRASET)*, vol. 9, no. II, Feb. 2021.  
+\clearpage
+
+
+\chapter*{APPENDIX}
+\addcontentsline{toc}{chapter}
+{APPENDIX}
+
+\appendix
+
+\section*{Plagiarisam Report}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{pl_report.jpeg}
+    \caption{Plagiarism Report}
+    \label{fig:plagarism report}
+\end{figure}
+\newpage
+\section*{Project Plan:}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=12 cm, height= 18 cm\linewidth]{plan.jpeg}
+    \caption{Gantt Chart}
+    \label{fig:Gantt Chart}
+\end{figure}
+\newpage
+
+
+\section*{Estimated Financial Budget}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Budget.png}
+    \caption{Estimated Budget}
+    \label{fig:Estimated Budget}
+\end{figure}
+\newpage
+
+%\end{align*}
+\end{document}
